@@ -1,5 +1,7 @@
 package org.example;
 
+import java.security.spec.RSAOtherPrimeInfo;
+
 /**
  * This Vehicle Bookings Management Systems manages the booking of Vehicles
  * by Passengers.
@@ -31,6 +33,14 @@ public class App
         VehicleManager vehicleManager = new VehicleManager("vehicles.txt");
         System.out.println("List of all Vehicles:");
         vehicleManager.displayAllVehicles();
+
+        System.out.println("-------------------------------------------");
+        int vicID = 10;
+        if(vehicleManager.findVehicleById(vicID) != null){
+            System.out.println(vehicleManager.findVehicleById(vicID));
+        }else{
+            System.out.println("Error! No Vehicle Found!");
+        }
 
         System.out.println("Program exiting... Goodbye");
     }

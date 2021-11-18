@@ -60,4 +60,13 @@ public class VehicleManager {
 
     //TODO add more functionality as per spec.
 
+    public Vehicle findVehicleById(int id){
+        Vehicle v = null;
+        for(int x = 0; x<this.vehicleList.size();x++) {
+            if (this.vehicleList.get(x).getId() == id) {
+                v = this.vehicleList.get(x);
+            }
+        }
+        return v;
+    }
 }
