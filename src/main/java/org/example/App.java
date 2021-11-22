@@ -34,14 +34,25 @@ public class App
         System.out.println("List of all Vehicles:");
         vehicleManager.displayAllVehicles();
 
-        System.out.println("-------------------------------------------");
-        int vicID = 10;
+        System.out.println("---------------------BY ID----------------------");
+        int vicID = 105;
         if(vehicleManager.findVehicleById(vicID) != null){
             System.out.println(vehicleManager.findVehicleById(vicID));
         }else{
             System.out.println("Error! No Vehicle Found!");
         }
+        System.out.println("---------------------BY MAKE----------------------");
+        String vicMake = "Fiat";
+        if(vehicleManager.findVehicleByMake(vicMake) != null){
+            System.out.println(vehicleManager.findVehicleByMake(vicMake));
+        }else{
+            System.out.println("Error! No Vehicle Found!");
+        }
 
         System.out.println("Program exiting... Goodbye");
+        System.out.println("---------------------BY SAME TYPE----------------------");
+        String vicMake2 = "Ford";
+        System.out.println(vehicleManager.sameMake(vicMake2));
     }
+
 }

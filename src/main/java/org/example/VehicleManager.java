@@ -69,4 +69,22 @@ public class VehicleManager {
         }
         return v;
     }
+
+    public Vehicle findVehicleByMake(String make){
+        for(Vehicle v : vehicleList){
+            if(v.getMake().equals(make)){
+                return v;
+            }
+        }
+        return null;
+    }
+    public ArrayList<Vehicle> sameMake(String make){
+        ArrayList<Vehicle> same = new ArrayList<>();
+        for(Vehicle v: vehicleList){
+            if(v.getMake().equals(make)){
+                same.add(v);
+            }
+        }
+        return same;
+    }
 }
