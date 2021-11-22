@@ -54,6 +54,7 @@ public class Passenger {
 
     private void setId() {}; // prevents the id from being set (as it should only come from autogenerator)
 
+    //Getters & Print
     public String getName() {
         return name;
     }
@@ -70,6 +71,7 @@ public class Passenger {
         return phone;
     }
 
+    // Setter & Edit
     public void setName(String name) {
         this.name = name;
     }
@@ -84,6 +86,23 @@ public class Passenger {
 
     public void setLocation(double latitude, double longitude) {
         this.location = new LocationGPS(latitude, longitude);
+    }
+
+    // Delete
+    public void delName() {
+        this.name = null;
+    }
+
+    public void delEmail() {
+        this.email = null;
+    }
+
+    public void delPhone() {
+        this.phone = null;
+    }
+
+    public void delLocation() {
+        this.location = new LocationGPS(0, 0);
     }
 
     @Override
