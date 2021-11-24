@@ -1,6 +1,8 @@
 package org.example;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.Month;
 
 class Booking
 {
@@ -12,20 +14,34 @@ class Booking
     private LocationGPS endLocation;
 
     private double cost;  //Calculated at booking time
+    private IdGenerator idGenerator = IdGenerator.getInstance("next-id-store.txt");
 
 
     //TODO - see specification
 
-    //Constructor
-    public Booking(int bookingId,int passengerId,int vehicleId, LocalDateTime bookingDateTime,
-    LocationGPS startLocation,LocationGPS endLocation)
+    //Constructor default
+    public Booking(int bookingId, int passengerId, int vehicleId,
+                   int year, int month, int day, int hour, int minute,
+                   double stlatitude, double stlongitude, double endlatitude, double endlongitude)
     {
         this.bookingId = bookingId;
         this.passengerId = passengerId;
         this.vehicleId = vehicleId;
-        this.bookingDateTime = bookingDateTime;
-        this.startLocation = startLocation;
-        this.endLocation = endLocation;
+        this.bookingDateTime = LocalDateTime.of(day,month,year,hour,minute);
+        this.startLocation = new LocationGPS(stlatitude,stlongitude);
+        this.endLocation = new LocationGPS(endlatitude,endlongitude);
+    }
+    //Constructor Randon ID Gen
+    public Booking(int passengerId,int vehicleId, LocalDateTime bookingDateTime,
+                   int month, int day, double hour, double minute,
+                   double stlatitude, double stlongitude,double endlatitude, double endlongitude)
+    {
+        this.bookingId = idGenerator.getNextId();;
+        this.passengerId = passengerId;
+        this.vehicleId = vehicleId;
+
+        this.startLocation = new LocationGPS(stlatitude,stlongitude);
+        this.endLocation = new LocationGPS(endlatitude,endlongitude);
     }
 
     // Getters & Print
