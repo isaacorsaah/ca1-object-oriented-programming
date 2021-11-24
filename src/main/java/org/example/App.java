@@ -53,6 +53,16 @@ public class App
         System.out.println("---------------------BY SAME TYPE----------------------");
         String vicMake2 = "Ford";
         System.out.println(vehicleManager.sameMake(vicMake2));
+
+        System.out.println("---------------------Passenger----------------------");
+        passengerStore.displayAllPassengers();
+
+        System.out.println("---------------------Adding Passenger----------------------");
+        Passenger pp = new Passenger(104,"Joseph pro","ff@gmail.com","087 111 4444",55.44,33.55);
+        passengerStore.addPassenger(pp);
+
+        System.out.println("---------------------Find Passenger By Name----------------------");
+        System.out.println(passengerStore.findPassengerName("Joseph pro"));
     }
 
 }

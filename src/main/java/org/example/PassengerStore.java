@@ -57,4 +57,33 @@ public class PassengerStore {
 
     // TODO - see functional spec for details of code to add
 
+    public void addPassenger(Passenger p){
+        boolean found = false;
+
+        for(Passenger pp: passengerList){
+            if(pp.getName().equalsIgnoreCase(p.getName()) && pp.getId()==p.getId()){
+                found = true;
+            }else {
+                found = false;
+            }
+        }
+
+        if(found == false){
+            passengerList.add(p);
+            System.out.println("Passenger Added to the list..");
+        }else{
+            System.out.println("Error: Passenger already exist");
+        }
+    }
+
+    public String findPassengerName(String name){
+        String found = null;
+        for(Passenger p : passengerList){
+            if(p.getName().equals(name)){
+                found = p.toString();
+            }
+        }
+        return found;
+    }
+
 } // end class
