@@ -64,7 +64,7 @@ public abstract class Vehicle
     }
     private void setId() {}; // prevents the id from being set (as it should only come from autogenerator)
 
-    public abstract double CostPerMile(); // Getting cost per mile from Car Class.
+    public abstract double CostPerMile(); // Getting cost per mile from Car Class & Van class.
 
     public String getMake()
     {

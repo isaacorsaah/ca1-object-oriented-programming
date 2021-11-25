@@ -31,15 +31,15 @@ class Booking
         this.startLocation = new LocationGPS(stlatitude,stlongitude);
         this.endLocation = new LocationGPS(endlatitude,endlongitude);
     }
-    //Constructor Randon ID Gen
+    //Constructor Randon booking ID Gen
     public Booking(int passengerId,int vehicleId, LocalDateTime bookingDateTime,
-                   int month, int day, double hour, double minute,
+                   int year, int month, int day, int hour, int minute,
                    double stlatitude, double stlongitude,double endlatitude, double endlongitude)
     {
         this.bookingId = idGenerator.getNextId();;
         this.passengerId = passengerId;
         this.vehicleId = vehicleId;
-
+        this.bookingDateTime = LocalDateTime.of(day,month,year,hour,minute);
         this.startLocation = new LocationGPS(stlatitude,stlongitude);
         this.endLocation = new LocationGPS(endlatitude,endlongitude);
     }

@@ -34,14 +34,14 @@ public class App
         System.out.println("List of all Vehicles:");
         vehicleManager.displayAllVehicles();
 
-        System.out.println("---------------------BY ID----------------------");
+        System.out.println("---------------------FIND BY ID----------------------");
         int vicID = 105;
         if(vehicleManager.findVehicleById(vicID) != null){
             System.out.println(vehicleManager.findVehicleById(vicID));
         }else{
             System.out.println("Error! No Vehicle Found!");
         }
-        System.out.println("---------------------BY MAKE----------------------");
+        System.out.println("---------------------FIND BY MAKE----------------------");
         String vicMake = "Fiat";
         if(vehicleManager.findVehicleByMake(vicMake) != null){
             System.out.println(vehicleManager.findVehicleByMake(vicMake));

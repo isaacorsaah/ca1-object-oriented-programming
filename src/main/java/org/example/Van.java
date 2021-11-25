@@ -39,12 +39,19 @@ public class Van extends Vehicle
         this.loadSpace = loadSpace;
     }
 
+    //Getters/Print
     public double getLoadSpace() {
         return loadSpace;
     }
+    //Setters/Edit
     public void setLoadSpace(double loadSpace) {
         this.loadSpace = loadSpace;
     }
+    //Delete
+    public void delLoadSpace() {
+        this.loadSpace = 0;
+    }
+
 
     @Override
     public String toString() {
@@ -52,4 +59,17 @@ public class Van extends Vehicle
                 "loadSpace=" + loadSpace +
                 "} " + super.toString();
     }
+
+    @Override
+    public double CostPerMile(){
+        double total = 0;
+        if(super.toString().equalsIgnoreCase("Van")){
+            total = super.getMilesPerKm()*6;
+        }else{
+            total = super.getMilesPerKm()*10;
+        }
+
+        return total;
+    }
+
 }
