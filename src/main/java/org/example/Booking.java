@@ -19,20 +19,8 @@ class Booking
 
     //TODO - see specification
 
-    //Constructor default
-    public Booking(int bookingId, int passengerId, int vehicleId,
-                   int year, int month, int day, int hour, int minute,
-                   double stlatitude, double stlongitude, double endlatitude, double endlongitude)
-    {
-        this.bookingId = bookingId;
-        this.passengerId = passengerId;
-        this.vehicleId = vehicleId;
-        this.bookingDateTime = LocalDateTime.of(day,month,year,hour,minute);
-        this.startLocation = new LocationGPS(stlatitude,stlongitude);
-        this.endLocation = new LocationGPS(endlatitude,endlongitude);
-    }
     //Constructor Randon booking ID Gen
-    public Booking(int passengerId,int vehicleId, LocalDateTime bookingDateTime,
+    public Booking(int passengerId,int vehicleId,
                    int year, int month, int day, int hour, int minute,
                    double stlatitude, double stlongitude,double endlatitude, double endlongitude)
     {

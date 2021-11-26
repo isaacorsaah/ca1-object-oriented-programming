@@ -23,47 +23,52 @@ public class App
 {
     public static void main(String[] args)
     {
-        System.out.println("\nWelcome to the VEHICLE BOOKINGS MANAGEMENT SYSTEM - CA1 for OOP\n");
+//        System.out.println("\nWelcome to the VEHICLE BOOKINGS MANAGEMENT SYSTEM - CA1 for OOP\n");
+//
+//        // create PassengerStore and load it with passenger records from text file
+//        PassengerStore passengerStore = new PassengerStore("passengers.txt");
+//        System.out.println("List of all passengers:");
+//        passengerStore.displayAllPassengers();
+//
+//        VehicleManager vehicleManager = new VehicleManager("vehicles.txt");
+//        System.out.println("List of all Vehicles:");
+//        vehicleManager.displayAllVehicles();
+//
+//        System.out.println("---------------------FIND BY ID----------------------");
+//        int vicID = 105;
+//        if(vehicleManager.findVehicleById(vicID) != null){
+//            System.out.println(vehicleManager.findVehicleById(vicID));
+//        }else{
+//            System.out.println("Error! No Vehicle Found!");
+//        }
+//        System.out.println("---------------------FIND BY MAKE----------------------");
+//        String vicMake = "Fiat";
+//        if(vehicleManager.findVehicleByMake(vicMake) != null){
+//            System.out.println(vehicleManager.findVehicleByMake(vicMake));
+//        }else{
+//            System.out.println("Error! No Vehicle Found!");
+//        }
+//        System.out.println("---------------------FIND BY MAKE----------------------");
+//
+//        System.out.println("Program exiting... Goodbye");
+//        System.out.println("---------------------BY SAME TYPE----------------------");
+//        String vicMake2 = "Ford";
+//        System.out.println(vehicleManager.sameMake(vicMake2));
+//
+//        System.out.println("---------------------Passenger----------------------");
+//        passengerStore.displayAllPassengers();
+//
+//        System.out.println("---------------------Adding Passenger----------------------");
+//        Passenger pp = new Passenger(104,"Joseph pro","ff@gmail.com","087 111 4444",55.44,33.55);
+//        passengerStore.addPassenger(pp);
+//
+//        System.out.println("---------------------Find Passenger By Name----------------------");
+//        System.out.println(passengerStore.findPassengerName("Joseph pro"));
 
-        // create PassengerStore and load it with passenger records from text file
-        PassengerStore passengerStore = new PassengerStore("passengers.txt");
-        System.out.println("List of all passengers:");
-        passengerStore.displayAllPassengers();
+        System.out.println("---------------------Print out all booking----------------------");
+        BookingManager  BookinManager = new BookingManager("Booking.txt");
+        BookinManager.showAllBooking();
 
-        VehicleManager vehicleManager = new VehicleManager("vehicles.txt");
-        System.out.println("List of all Vehicles:");
-        vehicleManager.displayAllVehicles();
-
-        System.out.println("---------------------FIND BY ID----------------------");
-        int vicID = 105;
-        if(vehicleManager.findVehicleById(vicID) != null){
-            System.out.println(vehicleManager.findVehicleById(vicID));
-        }else{
-            System.out.println("Error! No Vehicle Found!");
-        }
-        System.out.println("---------------------FIND BY MAKE----------------------");
-        String vicMake = "Fiat";
-        if(vehicleManager.findVehicleByMake(vicMake) != null){
-            System.out.println(vehicleManager.findVehicleByMake(vicMake));
-        }else{
-            System.out.println("Error! No Vehicle Found!");
-        }
-        System.out.println("---------------------FIND BY MAKE----------------------");
-
-        System.out.println("Program exiting... Goodbye");
-        System.out.println("---------------------BY SAME TYPE----------------------");
-        String vicMake2 = "Ford";
-        System.out.println(vehicleManager.sameMake(vicMake2));
-
-        System.out.println("---------------------Passenger----------------------");
-        passengerStore.displayAllPassengers();
-
-        System.out.println("---------------------Adding Passenger----------------------");
-        Passenger pp = new Passenger(104,"Joseph pro","ff@gmail.com","087 111 4444",55.44,33.55);
-        passengerStore.addPassenger(pp);
-
-        System.out.println("---------------------Find Passenger By Name----------------------");
-        System.out.println(passengerStore.findPassengerName("Joseph pro"));
     }
 
 }
