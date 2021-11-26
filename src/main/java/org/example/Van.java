@@ -53,23 +53,15 @@ public class Van extends Vehicle
     }
 
 
+
+
+
+
     @Override
     public String toString() {
         return "Van{" +
                 "loadSpace=" + loadSpace +
                 "} " + super.toString();
-    }
-
-    @Override
-    public double CostPerMile(){
-        double total = 0;
-        if(super.toString().equalsIgnoreCase("Van")){
-            total = super.getMilesPerKm()*6;
-        }else{
-            total = super.getMilesPerKm()*10;
-        }
-
-        return total;
     }
 
 }

@@ -9,7 +9,7 @@ public class Car extends Vehicle{
     public Car(String type, String make, String model, double milesPerKwH,
                    String registration, double costPerMile,
                    int year, int month, int day,
-                   int mileage, double latitude, double longitude)
+                   int mileage, double latitude, double longitude, int NoPassengers)
     {
       super( type,  make,  model,  milesPerKwH,
          registration,  costPerMile,
@@ -23,7 +23,7 @@ public class Car extends Vehicle{
     public Car(int id, String type, String make, String model, double milesPerKwH,
                String registration, double costPerMile,
                int year, int month, int day,
-               int mileage, double latitude, double longitude)
+               int mileage, double latitude, double longitude, int NoPassengers)
     {
 
         super( id,type,  make,  model,  milesPerKwH,
@@ -31,7 +31,7 @@ public class Car extends Vehicle{
                 year,  month,  day,
                 mileage,  latitude,  longitude);
 
-        this.NoPassengers = 4;
+        this.NoPassengers = NoPassengers;
 
     }
 
@@ -49,18 +49,6 @@ public class Car extends Vehicle{
         this.NoPassengers = 0;
     }
 
-    @Override
-    public double CostPerMile(){
-        double total = 0;
-
-        if(super.toString().equalsIgnoreCase("Car")){
-            total = super.getMilesPerKm()*2;
-        }else{
-            total = super.getMilesPerKm()*4;
-        }
-
-        return total;
-    }
 
     @Override
     public String toString(){

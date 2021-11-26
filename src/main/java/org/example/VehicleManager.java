@@ -53,8 +53,8 @@ public class VehicleManager {
                     vehicleList.add(new Car(id, type, make, model, milesPerKwH,
                             registration, costPerMile,
                             year, month, day,
-                            mileage, latitude, longitude
-                            ));
+                            mileage, latitude, longitude,
+                            loadSpace));
                 }
             }
             sc.close();

@@ -48,6 +48,7 @@ public class App
         }else{
             System.out.println("Error! No Vehicle Found!");
         }
+        System.out.println("---------------------FIND BY MAKE----------------------");
 
         System.out.println("Program exiting... Goodbye");
         System.out.println("---------------------BY SAME TYPE----------------------");
