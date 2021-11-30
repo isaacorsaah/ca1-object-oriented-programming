@@ -2,6 +2,7 @@ package org.example;
 
 import java.security.spec.RSAOtherPrimeInfo;
 import java.time.LocalDateTime;
+import java.util.Collections;
 
 /**
  * This Vehicle Bookings Management Systems manages the booking of Vehicles
@@ -66,12 +67,20 @@ public class App
 //        System.out.println("---------------------Find Passenger By Name----------------------");
 //        System.out.println(passengerStore.findPassengerName("Joseph pro"));
 
-//        System.out.println("---------------------Print out all booking----------------------");
+//        System.out.println("---------------------Print out all bookings In File----------------------");
 //        BookingManager  BookinManager = new BookingManager("Booking.txt");
 //        BookinManager.showAllBooking();
 
-        System.out.println(LocalDateTime.now());
+         System.out.println("---------------------Print out all bookings in App----------------------");
+        BookingManager Bm = new BookingManager();
+        Bm.AddBooking(66,123,2012,3,11,13,50,55.55,66.6,77,89);
+        Bm.AddBooking(86,423,2014,2,15,15,35,55,77,88,111);
+        Bm.AddBooking(76,153,2015,6,14,11,42,22,44,66,88);
+//        Bm.showAllBooking();
 
+        System.out.println("---------------------Print out all sorted bookings in App----------------------");
+        Collections.sort(Bm.getBookingList());
+        Bm.showAllBooking();
     }
 
 }

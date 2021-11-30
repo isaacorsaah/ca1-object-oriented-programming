@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Month;
 
-class Booking
+class Booking implements Comparable<Booking>
 {
     private int bookingId;
     private int passengerId;
@@ -27,7 +27,7 @@ class Booking
         this.bookingId = idGenerator.getNextId();;
         this.passengerId = passengerId;
         this.vehicleId = vehicleId;
-        this.bookingDateTime = LocalDateTime.of(day,month,year,hour,minute);
+        this.bookingDateTime = LocalDateTime.of(year,month,day,hour,minute);
         this.startLocation = new LocationGPS(stlatitude,stlongitude);
         this.endLocation = new LocationGPS(endlatitude,endlongitude);
     }
@@ -90,6 +90,24 @@ class Booking
     }
     public void delEndLocation() {
         endLocation = null;
+    }
+
+    @Override
+    public int compareTo(Booking other)
+    {
+
+        if (!(other.bookingDateTime.getYear() < this.bookingDateTime.getYear()))
+        {
+            return -1;
+        }
+        else if (this.bookingDateTime.getYear() > other.bookingDateTime.getYear())
+        {
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
     }
 
     @Override

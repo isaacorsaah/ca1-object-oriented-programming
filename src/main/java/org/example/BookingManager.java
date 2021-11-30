@@ -19,6 +19,11 @@ public class BookingManager
         this.passengerStore = null;
         loadBookingFromFile(fileName);
     }
+    public BookingManager() {
+        this.bookingList = new ArrayList<>();
+        this.vehicleManager = null;
+        this.passengerStore = null;
+    }
 
     public void loadBookingFromFile(String fileName) {
         try {
