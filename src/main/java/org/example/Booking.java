@@ -92,6 +92,8 @@ class Booking implements Comparable<Booking>
         endLocation = null;
     }
 
+
+
     @Override
     public int compareTo(Booking other)
     {

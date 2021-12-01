@@ -88,4 +88,26 @@ public class BookingManager
         }
         return found;
     }
+
+        public double avgLatitude(){
+            double total = 0;
+            double counter = 0;
+            for(Booking b: bookingList ) {
+                total = b.getStartLocation().getLatitude() - b.getEndLocation().getLatitude();
+                counter += total;
+            }
+            return counter/this.bookingList.size();
+        }
+    public double avgLongitude(){
+        double total = 0;
+        double counter = 0;
+        for(Booking b: bookingList ) {
+            total = b.getStartLocation().getLongitude() - b.getEndLocation().getLongitude();
+            counter += total;
+        }
+        return counter/this.bookingList.size();
+    }
+
+
+
 }

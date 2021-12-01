@@ -106,6 +106,16 @@ public class Passenger {
     }
 
     @Override
+    public boolean equals(Object v){
+        boolean x = false;
+
+        if(this == v){
+            x =  true;
+        }
+        return x;
+    }
+
+    @Override
     public String toString() {
         return this.getClass().getSimpleName() + "{"
                 + "id=" + id + ", name=" + name + ", email="

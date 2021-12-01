@@ -76,11 +76,11 @@ public class PassengerStore {
         }
     }
 
-    public String findPassengerName(String name){
-        String found = null;
+    public Passenger findPassengerByName(String name){
+        Passenger found = null;
         for(Passenger p : passengerList){
             if(p.getName().equals(name)){
-                found = p.toString();
+                found = p;
             }
         }
         return found;
