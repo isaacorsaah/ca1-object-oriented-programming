@@ -85,7 +85,6 @@ public class App
 //        System.out.println("avgLongitude = " + Bm.avgLongitude());
 //        System.out.println("avgLatitude = " + Bm.avgLatitude());
 
-        "john"
 
 
     }

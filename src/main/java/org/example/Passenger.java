@@ -109,11 +109,28 @@ public class Passenger {
     public boolean equals(Object v){
         boolean x = false;
 
+
         if(this == v){
             x =  true;
         }
+
+        if(!(v instanceof Passenger)){
+            return false;
+        }
+
+        Passenger p = (Passenger) v;
+
+        if(this.name == p.name){
+            x = true;
+        }
+
         return x;
+
+
     }
+
+
+
 
     @Override
     public String toString() {
