@@ -61,7 +61,7 @@ public class PassengerStore {
         boolean found = false;
 
         for(Passenger pp: passengerList){
-            if(pp.getName().equalsIgnoreCase(p.getName()) && pp.getId()==p.getId()){
+            if(pp.getName().equals(p.getName()) && pp.getEmail().equals(p.getEmail())){
                 found = true;
             }else {
                 found = false;
@@ -86,4 +86,13 @@ public class PassengerStore {
         return found;
     }
 
+    public Passenger findPassengerById(int id){
+        Passenger found = null;
+        for(Passenger p : passengerList){
+            if(p.getId() == id){
+                found = p;
+            }
+        }
+        return found;
+    }
 } // end class

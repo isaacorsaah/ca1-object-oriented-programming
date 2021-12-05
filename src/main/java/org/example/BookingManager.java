@@ -71,7 +71,12 @@ public class BookingManager
                            int year, int month, int day, int hour, int minute,
                            double stlatitude, double stlongitude,double endlatitude, double endlongitude){
 
-        bookingList.add(new Booking(passengerId,vehicleId,year,month,day,hour,minute,stlatitude,stlongitude,endlatitude,endlongitude));
+        if(passengerStore.findPassengerById(passengerId) != null){
+            if(vehicleManager.findVehicleById(vehicleId) != null){
+                bookingList.add(new Booking(passengerId,vehicleId,year,month,day,hour,minute,stlatitude,stlongitude,endlatitude,endlongitude));
+            }
+        }
+
 
     }
     public void showAllBooking(){

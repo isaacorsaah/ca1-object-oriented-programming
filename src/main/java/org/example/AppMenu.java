@@ -130,17 +130,27 @@ public class AppMenu
                         System.out.println("Add a passenger");
 //                        System.out.println("Enter new passenger details:");
 //                      hardcoded data to show system working
-                        p = new Passenger("Ivan Kiev", "ivan2222@icloud.com",
-                                "085-2222322", 53.1234, -6.0222);
+                        System.out.println("Name : ");
+                        String name = keyboard.nextLine();
+                        System.out.println("Email : ");
+                        String email = keyboard.nextLine();
+                        System.out.println("Phone Number : ");
+                        String Phone = keyboard.nextLine();
+                        System.out.println("Latitude : ");
+                        double lat = keyboard.nextDouble();
+                        System.out.println("Longitude : ");
+                        double lon =keyboard.nextDouble();
+                        p = new Passenger(name, email,
+                                Phone, lat, lon);
                         passengerStore.addPassenger(p);
                         break;
                     case FIND_BY_NAME:
                         System.out.println("Find Passenger by Name");
                         System.out.println("Enter passenger name: ");
-                        String name = keyboard.nextLine();
-                        p = passengerStore.findPassengerByName(name);
+                        String name2 = keyboard.nextLine();
+                        p = passengerStore.findPassengerByName(name2);
                         if (p == null)
-                            System.out.println("No passenger matching the name \"" + name + "\"");
+                            System.out.println("No passenger matching the name \"" + name2 + "\"");
                         else
                             System.out.println("Found passenger: \n" + p.toString());
                         break;

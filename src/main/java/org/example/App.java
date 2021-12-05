@@ -25,13 +25,13 @@ public class App
 {
     public static void main(String[] args)
     {
-//        System.out.println("\nWelcome to the VEHICLE BOOKINGS MANAGEMENT SYSTEM - CA1 for OOP\n");
-//
-//        // create PassengerStore and load it with passenger records from text file
-//        PassengerStore passengerStore = new PassengerStore("passengers.txt");
-//        System.out.println("List of all passengers:");
-//        passengerStore.displayAllPassengers();
-//
+        System.out.println("\nWelcome to the VEHICLE BOOKINGS MANAGEMENT SYSTEM - CA1 for OOP\n");
+
+        // create PassengerStore and load it with passenger records from text file
+        PassengerStore passengerStore = new PassengerStore("passengers.txt");
+        System.out.println("List of all passengers:");
+        passengerStore.displayAllPassengers();
+
 //        VehicleManager vehicleManager = new VehicleManager("vehicles.txt");
 //        System.out.println("List of all Vehicles:");
 //        vehicleManager.displayAllVehicles();
@@ -62,18 +62,20 @@ public class App
 //
 //        System.out.println("---------------------Adding Passenger----------------------");
 //        Passenger pp = new Passenger(104,"Joseph pro","ff@gmail.com","087 111 4444",55.44,33.55);
+//        Passenger pp2 = new Passenger(106,"Joseph pro","ff@gmail.com","087 111 4444",55.44,33.55);
 //        passengerStore.addPassenger(pp);
-//
+//        passengerStore.addPassenger(pp2);
+//        passengerStore.displayAllPassengers();
 //        System.out.println("---------------------Find Passenger By Name----------------------");
 //        System.out.println(passengerStore.findPassengerName("Joseph pro"));
 
-        System.out.println("---------------------Print out all bookings In File----------------------");
-        BookingManager  BookinManager = new BookingManager("Booking.txt");
-        BookinManager.showAllBooking();
+//        System.out.println("---------------------Print out all bookings In File----------------------");
+//        BookingManager  BookinManager = new BookingManager("Booking.txt");
+//        BookinManager.showAllBooking();
 
 //         System.out.println("---------------------Print out all bookings in App----------------------");
-        BookingManager Bm = new BookingManager();
-        Bm.AddBooking(66,123,2012,3,11,13,50,55.55,66.6,77,89);
+//        BookingManager Bm = new BookingManager();
+//        Bm.AddBooking(66,123,2012,3,11,13,50,55.55,66.6,77,89);
 //        Bm.AddBooking(86,423,2014,2,15,15,35,55,77,88,111);
 //        Bm.AddBooking(76,153,2015,6,14,11,42,22,44,66,88);
 ////        Bm.showAllBooking();
