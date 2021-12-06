@@ -95,4 +95,12 @@ public class PassengerStore {
         }
         return found;
     }
+    public void deleteById(int id){
+        for(Passenger p: passengerList){
+            if(p.getId() == id){
+                p = null;
+            }
+        }
+        displayAllPassengers();
+    }
 } // end class

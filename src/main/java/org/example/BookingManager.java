@@ -74,6 +74,8 @@ public class BookingManager
         if(passengerStore.findPassengerById(passengerId) != null){
             if(vehicleManager.findVehicleById(vehicleId) != null){
                 bookingList.add(new Booking(passengerId,vehicleId,year,month,day,hour,minute,stlatitude,stlongitude,endlatitude,endlongitude));
+            }else{
+                System.out.println("Passenger ID or Vehicle ID Does Not Exist!!");
             }
         }
 
@@ -111,6 +113,15 @@ public class BookingManager
             counter += total;
         }
         return counter/this.bookingList.size();
+    }
+
+    public void deleteByVicId(int vehicleID){
+        for(Booking b: bookingList){
+            if(b.getVehicleId() == vehicleID){
+                b = null;
+            }
+        }
+        showAllBooking();
     }
 
 
