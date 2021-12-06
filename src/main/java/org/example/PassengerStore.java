@@ -61,7 +61,7 @@ public class PassengerStore {
         boolean found = false;
 
         for(Passenger pp: passengerList){
-            if(pp.getName().equals(p.getName()) && pp.getEmail().equals(p.getEmail())){
+            if(pp.equals(p)){
                 found = true;
             }else {
                 found = false;

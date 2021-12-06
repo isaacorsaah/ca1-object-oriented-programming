@@ -120,7 +120,7 @@ public class Passenger {
 
         Passenger p = (Passenger) v;
 
-        if(this.name == p.name){
+        if(this.name.equals(p.name) && this.email.equals(p.email)){
             x = true;
         }
 
@@ -128,8 +128,6 @@ public class Passenger {
 
 
     }
-
-
 
 
     @Override

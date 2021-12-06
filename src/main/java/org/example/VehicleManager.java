@@ -65,39 +65,15 @@ public class VehicleManager {
     }
 
     //TODO add more functionality as per spec.
-    public void addTruck(int id, String type, String make, String model, double milesPerKwH,
-                         String registration, double costPerMile,
-                         int year, int month, int day,
-                         int mileage, double latitude, double longitude,
-                         int loadSpace){
+    public void addVehicle(Vehicle v){
 
-
-        if(type.equalsIgnoreCase("Truck") || type.equalsIgnoreCase("Van")) {
-            vehicleList.add(new Van(id, type, make, model, milesPerKwH,
-                    registration, costPerMile,
-                    year, month, day,
-                    mileage, latitude, longitude,
-                    loadSpace));
-            System.out.println("Vehicle has been added.");
-        }else{
-            System.out.println("Error");
+        if(v.getType() == null){
+            System.out.println("ERROR");
         }
-    }
-    public void AddCar(int id, String type, String make, String model, double milesPerKwH,
-                       String registration, double costPerMile,
-                       int year, int month, int day,
-                       int mileage, double latitude, double longitude, int NoPassengers){
 
-        if(type.equalsIgnoreCase("Car") || type.equalsIgnoreCase("4x4")) {
-            vehicleList.add(new Car(id, type, make, model, milesPerKwH,
-                    registration, costPerMile,
-                    year, month, day,
-                    mileage, latitude, longitude,
-                    NoPassengers));
-            System.out.println("Vehicle has been added.");
-        }else{
-            System.out.println("Error");
-        }
+        vehicleList.add(v);
+        System.out.println("Vehicle has been added.");
+
     }
 
 

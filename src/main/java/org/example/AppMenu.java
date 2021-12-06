@@ -1,6 +1,7 @@
 package org.example;
 
 import java.io.IOException;
+import java.sql.SQLOutput;
 import java.time.LocalDateTime;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -75,6 +76,7 @@ public class AppMenu
                         break;
                     case BOOKINGS:
                         System.out.println("Bookings option chosen");
+                        displayBookingsMenu();
                         break;
                     case EXIT:
                         System.out.println("Exit Menu option chosen");
@@ -185,6 +187,7 @@ public class AppMenu
 
         Scanner keyboard = new Scanner(System.in);
         int option = 0;
+        Booking b;
         do
         {
             System.out.println("\n" + MENU_ITEMS);
@@ -196,15 +199,39 @@ public class AppMenu
                 {
                     case SHOW_ALL:
                         System.out.println("Display ALL Bookings");
-                        //bookingManager.displayAllBookings();
+                        bookingManager.displayAllBookings();
                         break;
                     case NEW_BOOKING:
-                        System.out.println("Find Passenger by Name");
-                        System.out.println("Enter passenger name: ");
 
-                        String passengerId;
-                        String vehicleId;
-                        System.out.println("Enter booking date and time using format \"YYYY-MM-DDTHH:mm\"");
+                        System.out.println("Registering New Booking ");
+
+                        System.out.println("Enter Your ID: ");
+                        int passengerId = keyboard.nextInt();
+                        System.out.println("Enter A Car ID:");
+                        int vehicleId = keyboard.nextInt();
+                        System.out.println("Enter Date (YEAR): ");
+                        int year = keyboard.nextInt();
+                        System.out.println("Enter Date (MONTH): ");
+                        int month = keyboard.nextInt();
+                        System.out.println("Enter Date (DAY): ");
+                        int day = keyboard.nextInt();
+                        System.out.println("Time (HOUR): ");
+                        int hour = keyboard.nextInt();
+                        System.out.println("Time (MINUTES): ");
+                        int minute = keyboard.nextInt();
+                        System.out.println("Starting Latitude: ");
+                        double stlatitude = keyboard.nextDouble();
+                        System.out.println("Starting Longitude: ");
+                        double stlongitude = keyboard.nextDouble();
+                        System.out.println("Ending Latitude: ");
+                        double endlatitude = keyboard.nextDouble();
+                        System.out.println("Ending Longitide: ");
+                        double endlongitude = keyboard.nextDouble();
+
+                        b = new Booking( passengerId, vehicleId,
+                         year,  month,  day,  hour,  minute,
+                         stlatitude,  stlongitude, endlatitude, endlongitude);
+                        bookingManager.AddBooking(b);
                         break;
                     case EXIT:
                         System.out.println("Exit Menu option chosen");
@@ -219,6 +246,124 @@ public class AppMenu
                 System.out.print("Invalid option - please enter number in range");
             }
         } while (option != EXIT);
+        }
 
+        // Vehicle
+    private void displayViheclesMenu() {
+        final String MENU_ITEMS = "\n*** VEHICLE MENU ***\n"
+                + "1. Show all Vehicle\n"
+                + "2. Make a NEW Vehicle\n"
+                + "3. Exit\n"
+                + "Enter Option [1,3]";
+
+        final int VEHICLE = 1;
+        final int NEW_VAN = 2;
+        final int NEW_CAR = 3;
+        final int EXIT = 4;
+
+        Scanner keyboard = new Scanner(System.in);
+        int option = 0;
+        Vehicle v;
+        do {
+            System.out.println("\n" + MENU_ITEMS);
+            try {
+                String usersInput = keyboard.nextLine();
+                option = Integer.parseInt(usersInput);
+                switch (option) {
+                    case VEHICLE:
+                        System.out.println("Display ALL Vehicle");
+                        bookingManager.displayAllBookings();
+                        break;
+                    case NEW_VAN:
+                        System.out.println("Registering New VAN");
+                        System.out.println("The Type Of VAN: ");
+                        String type = keyboard.next();
+                        System.out.println("The Make Of VAN: ");
+                        String make = keyboard.next();
+                        System.out.println("The Model Of VAN: ");
+                        String model = keyboard.next();
+                        System.out.println("The milesPerKwH Of VAN: ");
+                        double milesPerKwH = keyboard.nextDouble();
+                        System.out.println("The registration Of VAN: ");
+                        String registration = keyboard.next();
+                        System.out.println("The costPerMile Of VAN: ");
+                        double costPerMile = keyboard.nextDouble();
+                        System.out.println("DATE (YEAR): ");
+                        int year = keyboard.nextInt();
+                        System.out.println("DATE (MONTH): ");
+                        int month = keyboard.nextInt();
+                        System.out.println("DATE (DAY): ");
+                        int day = keyboard.nextInt();
+                        System.out.println("The mileage Of VAN: ");
+                        int mileage = keyboard.nextInt();
+                        System.out.println("The latitude Of VAN: ");
+                        double latitude = keyboard.nextDouble();
+                        System.out.println("The longitude Of VAN: ");
+                        double longitude = keyboard.nextDouble();
+                        System.out.println("The loadSpace Of VAN: ");
+                        int loadSpace = keyboard.nextInt();
+
+                        v = new Van(type, make, model, milesPerKwH,
+                                registration, costPerMile,
+                                year, month, day,
+                                mileage, latitude, longitude,
+                                loadSpace);
+
+                        vehicleManager.addVehicle(v);
+
+                        break;
+                    case NEW_CAR:
+
+                        System.out.println("Registering New CAR");
+
+
+                        System.out.println("The Type Of CAR: ");
+                        String type1 = keyboard.next();
+                        System.out.println("The Make Of CAR: ");
+                        String make1 = keyboard.next();
+                        System.out.println("The Model Of CAR: ");
+                        String model1 = keyboard.next();
+                        System.out.println("The milesPerKwH Of CAR: ");
+                        double milesPerKwH1 = keyboard.nextDouble();
+                        System.out.println("The registration Of CAR: ");
+                        String registration1 = keyboard.next();
+                        System.out.println("The costPerMile Of CAR: ");
+                        double costPerMile1 = keyboard.nextDouble();
+                        System.out.println("DATE (YEAR): ");
+                        int year1 = keyboard.nextInt();
+                        System.out.println("DATE (MONTH): ");
+                        int month1 = keyboard.nextInt();
+                        System.out.println("DATE (DAY): ");
+                        int day1 = keyboard.nextInt();
+                        System.out.println("The mileage Of CAR: ");
+                        int mileage1 = keyboard.nextInt();
+                        System.out.println("The latitude Of CAR: ");
+                        double latitude1 = keyboard.nextDouble();
+                        System.out.println("The longitude Of CAR: ");
+                        double longitude1 = keyboard.nextDouble();
+                        System.out.println("The loadSpace Of CAR: ");
+                        int NoPassengers = keyboard.nextInt();
+
+                        v = new Car( type1, make1, model1, milesPerKwH1,
+                                registration1, costPerMile1,
+                                year1, month1, day1,
+                                mileage1, latitude1, longitude1,
+                                NoPassengers);
+
+                        vehicleManager.addVehicle(v);
+
+                        break;
+                    case EXIT:
+                        System.out.println("Exit Menu option chosen");
+                        break;
+                    default:
+                        System.out.print("Invalid option - please enter number in range");
+                        break;
+                }
+
+            } catch (InputMismatchException | NumberFormatException e) {
+                System.out.print("Invalid option - please enter number in range");
+            }
+        } while (option != EXIT);
     }
-}
+    }
