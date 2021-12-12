@@ -2,6 +2,7 @@ package org.example;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -66,13 +67,19 @@ public class VehicleManager {
 
     //TODO add more functionality as per spec.
     public void addVehicle(Vehicle v){
-
-        if(v.getType() == null){
-            System.out.println("ERROR");
+        boolean found = false;
+        for(Vehicle v2: vehicleList){
+            if(v2.getId() == v.getId()){
+              found = true;
+            }
         }
 
-        vehicleList.add(v);
-        System.out.println("Vehicle has been added.");
+        if(found = false){
+            vehicleList.add(v);
+            System.out.println("Vehicle has been added.");
+        }else{
+            System.out.println("ERROR");
+        }
 
     }
 
@@ -95,6 +102,7 @@ public class VehicleManager {
         }
         return null;
     }
+
     public ArrayList<Vehicle> sameMake(String make){
         ArrayList<Vehicle> same = new ArrayList<>();
         for(Vehicle v: vehicleList){

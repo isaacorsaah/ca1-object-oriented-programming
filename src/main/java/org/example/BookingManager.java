@@ -67,6 +67,8 @@ public class BookingManager
         return this.vehicleManager;
     }
 
+
+    // Adding to booking without having duplications..
     public void AddBooking(Booking b){
         boolean found = false;
         if(passengerStore.findPassengerById(b.getPassengerId()) != null){
@@ -88,11 +90,14 @@ public class BookingManager
             System.out.println(b.toString());
         }
     }
-    public String FindById(int id){
+
+    public String FindById(int BookingID, int passengerid, int vehicleId){
         String found = null;
         for(Booking b: bookingList){
-            if(b.getBookingId() == id || b.getPassengerId() == id || b.getVehicleId() == id){
-                found = b.toString();
+            if(b.getBookingId() == BookingID && b.getPassengerId() == passengerid && b.getVehicleId() == vehicleId){
+                if(b != null) {
+                    found = b.toString();
+                }
             }
         }
         return found;
@@ -102,28 +107,42 @@ public class BookingManager
             double total = 0;
             double counter = 0;
             for(Booking b: bookingList ) {
-                total = b.getStartLocation().getLatitude() - b.getEndLocation().getLatitude();
+                total += b.getStartLocation().getLatitude() - b.getEndLocation().getLatitude();
                 counter += total;
             }
             return counter/this.bookingList.size();
         }
+
     public double avgLongitude(){
         double total = 0;
         double counter = 0;
         for(Booking b: bookingList ) {
-            total = b.getStartLocation().getLongitude() - b.getEndLocation().getLongitude();
+            total += b.getStartLocation().getLongitude() - b.getEndLocation().getLongitude();
             counter += total;
         }
         return counter/this.bookingList.size();
     }
 
-    public void deleteByVicId(int vehicleID){
+    public void deleteBookingByID(int Bookingid){
+        boolean found = false;
         for(Booking b: bookingList){
-            if(b.getVehicleId() == vehicleID){
-                b = null;
+            if(b.getBookingId() == Bookingid){
+                found = true;
             }
         }
-        displayAllBookings();
+
+        if(found == true){
+            for(Booking b: bookingList){
+                if(b != null){
+                    System.out.println( b.toString());
+                }else{
+                    System.out.println("This Booking Has Deen Deleted!");
+                }
+            }
+        }else{
+            System.out.println("Booking ID Does Not Exist!!");
+        }
+
     }
 
 

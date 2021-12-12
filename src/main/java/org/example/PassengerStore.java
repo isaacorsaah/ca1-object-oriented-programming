@@ -96,11 +96,23 @@ public class PassengerStore {
         return found;
     }
     public void deleteById(int id){
+        boolean found = false;
         for(Passenger p: passengerList){
             if(p.getId() == id){
-                p = null;
+                found = true;
             }
         }
-        displayAllPassengers();
+        if(found == true){
+            for(Passenger p: passengerList){
+                if(p != null){
+                    System.out.println(p.toString());
+                }else{
+                    System.out.println("PASSENGER HAS BEEN DELETED");
+                }
+            }
+        }else{
+            System.out.println("PASSENGER DOES NOT EXIST");
+        }
+
     }
 } // end class

@@ -104,13 +104,17 @@ public class AppMenu
                 + "1. Show all Passengers\n"
                 + "2. Add new Passenger\n"
                 + "3. Find Passenger by Name\n"
-                + "4. Exit\n"
+                + "4. Find Passenger by ID\n"
+                + "5. Delete Existing Passenger By ID\n"
+                + "6. Exit\n"
                 + "Enter Option [1,4]";
 
         final int SHOW_ALL = 1;
         final int NEW_PASSENGER = 2;
         final int FIND_BY_NAME = 3;
-        final int EXIT = 4;
+        final int FIND_BY_ID = 4;
+        final int DELETE_P = 5;
+        final int EXIT = 6;
 
         Scanner keyboard = new Scanner(System.in);
         int option = 0;
@@ -156,6 +160,23 @@ public class AppMenu
                         else
                             System.out.println("Found passenger: \n" + p.toString());
                         break;
+
+                    case FIND_BY_ID:
+                        System.out.println("Find passenger by ID");
+                        System.out.println("Enter passenger ID: ");
+                        int passId = keyboard.nextInt();
+
+                        passengerStore.findPassengerById(passId);
+
+                        break;
+                    case DELETE_P:
+                        System.out.println("DELETING EXISTING PASSENGER!");
+                        System.out.println("Enter passenger ID: ");
+                        int passId1 = keyboard.nextInt();
+
+                        passengerStore.deleteById(passId1);
+
+                        break;
                     case EXIT:
                         System.out.println("Exit Menu option chosen");
                         break;
@@ -178,12 +199,18 @@ public class AppMenu
         final String MENU_ITEMS = "\n*** BOOKINGS MENU ***\n"
                 + "1. Show all Bookings\n"
                 + "2. Make a NEW Booking\n"
-                + "3. Exit\n"
+                + "3. Find Existing Booking\n"
+                + "4. Delete Existing Booking\n"
+                + "5. Average Journey\n"
+                + "6. Exit\n"
                 + "Enter Option [1,3]";
 
         final int SHOW_ALL = 1;
         final int NEW_BOOKING = 2;
-        final int EXIT = 3;
+        final int FIND_ID = 3;
+        final int DELETE = 4;
+        final int Journey = 5;
+        final int EXIT = 6;
 
         Scanner keyboard = new Scanner(System.in);
         int option = 0;
@@ -232,6 +259,33 @@ public class AppMenu
                          year,  month,  day,  hour,  minute,
                          stlatitude,  stlongitude, endlatitude, endlongitude);
                         bookingManager.AddBooking(b);
+                        break;
+
+                    case FIND_ID:
+
+                        System.out.println("FINING EXISTING BOOKING BY USING ALL IDS");
+
+                        System.out.println("Enter Your Booking ID: ");
+                        int BookingId1 = keyboard.nextInt();
+                        System.out.println("Enter Your Passenger ID: ");
+                        int PassengerID1 = keyboard.nextInt();
+                        System.out.println("Enter Your Vehicle ID: ");
+                        int VehicleID1 = keyboard.nextInt();
+
+                        System.out.println(bookingManager.FindById(BookingId1,PassengerID1,VehicleID1));
+
+                        break;
+                    case DELETE:
+                        System.out.println("DELETING AN EXISTING BOOKING BY BOOKING ID");
+                        System.out.println("Enter Your Booking ID: ");
+                        int delBookingId = keyboard.nextInt();
+                        bookingManager.deleteBookingByID(delBookingId);
+
+                        break;
+                    case Journey:
+                        System.out.println("Average Journeys OF all Booking ");
+                        System.out.println(bookingManager.avgLatitude() + "Average Latitude Journey");
+                        System.out.println(bookingManager.avgLongitude() + "Average Longitude Journey");
                         break;
                     case EXIT:
                         System.out.println("Exit Menu option chosen");
